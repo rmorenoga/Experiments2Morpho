@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : simulationConfig.xml
+    Created on : 11/12/2016
+    Author     : rodr
+    Description:
+        Purpose of the document follows.
+-->
+<SimulationConfig>
+
+ <ModuleSet>emergeModules</ModuleSet>
+
+     <Simulation>
+        <Simulator>Vrep</Simulator>
+        <ServerId>0</ServerId>
+        <WaitTimeLoadSimulator>20</WaitTimeLoadSimulator>
+        <Attempts>3</Attempts>
+	<MaxSimulationTime>30</MaxSimulationTime>
+        <TimeStartSimulation>5</TimeStartSimulation>
+        <NMaxModulos>16</NMaxModulos>
+	<UseMPI>false</UseMPI>
+	<PoseUpdateRate>0.1</PoseUpdateRate>
+        <Vrep>
+            <!-- Example of the Vrep´s Path
+            In Windows: C:\\V-REP3\\V-REP_PRO_EDU\\
+            In Linux: /work/itureal/vrep 
+            -->
+            <VrepPathW>C:\\Program Files (x86)\\V-REP3\\V-REP_PRO_EDU\\</VrepPathW>
+            <VrepPathL>/V-REP/Vrep0/</VrepPathL>
+        </Vrep>
+	
+    </Simulation>
+
+     <Worlds>
+    	<NumberOfWorldsBase>1</NumberOfWorldsBase>
+        <WorldBase0>baseEstandar.world</WorldBase0>
+	<FunctionToEvaluateWorlds>min</FunctionToEvaluateWorlds>
+    </Worlds>
+
+    <Debug>false</Debug>
+
+    <Control>
+
+    <Controller>CPGH</Controller>
+	    
+	<Amplitude>
+            <MaxValue>1</MaxValue>
+            <MinValue>-1</MinValue>
+	</Amplitude>
+	<AngularFreq>
+            <MaxValue>1</MaxValue>
+            <MinValue>0</MinValue>
+	</AngularFreq>
+	<Phase>
+            <MaxValue>180</MaxValue>
+            <MinValue>-180</MinValue>
+	</Phase>
+	<Offset>
+		<MaxValue>1</MaxValue>
+		<MinValue>-1</MinValue>
+	</Offset>
+        <Weighing>
+            <MaxValue>100</MaxValue>
+            <MinValue>0</MinValue>
+        </Weighing>
+        <Genmodel>connHormone</Genmodel>
+        <Propmodel>Attenuate</Propmodel>
+        <PropDirection>Forward</PropDirection>
+        <Recmodel>ANNBasic</Recmodel>
+        <OrientationDiscovery>false</OrientationDiscovery></Control>
+
+    <Tree>
+    	<MaxModules>141</MaxModules>
+	    <FirstModuleBase>true</FirstModuleBase>
+	    <ManipulatorBase>false</ManipulatorBase>
+        <FirstNumConnections>0</FirstNumConnections> 
+        <NMaxModulesIni>16</NMaxModulesIni>
+        <TypeModules>
+            <MaxValue>1</MaxValue>
+            <MinValue>1</MinValue>
+        </TypeModules>
+        <NMaxConnections>5</NMaxConnections>
+        
+            
+            <!--<></>-->
+    </Tree>
+
+</SimulationConfig>
+
